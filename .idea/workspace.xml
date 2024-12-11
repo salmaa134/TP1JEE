@@ -10,13 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d68cce5c-27b4-4da6-95f5-289229c5a78f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ma/emsi/abourabia/jeetp1abourabia/LLM/JsonUtilPourGemini.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ma/emsi/abourabia/jeetp1abourabia/LLM/LlmClientPourGemini.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ma/emsi/abourabia/jeetp1abourabia/LLM/LlmInteraction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ma/emsi/abourabia/jeetp1abourabia/LLM/RequeteException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ma/emsi/abourabia/jeetp1abourabia/JSF/ChatBeanTabourabia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/emsi/abourabia/jeetp1abourabia/JSF/ChatBeanTabourabia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +131,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733830221073</updated>
-      <workItem from="1733830222061" duration="4473000" />
+      <workItem from="1733830222061" duration="5615000" />
     </task>
     <servers />
   </component>

@@ -6,6 +6,8 @@ import jakarta.faces.model.SelectItem;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
+import ma.emsi.abourabia.jeetp1abourabia.LLM.JsonUtilPourGemini;
+import ma.emsi.abourabia.jeetp1abourabia.LLM.LlmInteraction;
 
 import java.io.Serializable;
 import java.util.*;
@@ -46,7 +48,8 @@ public class ChatBeanTabourabia implements Serializable {
      */
     @Inject
     private FacesContext facesContext;
-
+    @Inject
+    private JsonUtilPourGemini jsonUtil;
     /**
      * Obligatoire pour un bean CDI (classe gérée par CDI).
      */
@@ -136,15 +139,18 @@ public class ChatBeanTabourabia implements Serializable {
             return null;
         }
 
-        // Nouveau traitement : Analyse linguistique et jeux de mots
-        this.reponse = genererReponseOriginale(question);
-
-        if (this.conversation.isEmpty()) {
-            this.reponse = "🧠 Mode d'analyse linguistique : " + systemRole.toUpperCase(Locale.FRENCH) + "\n" + this.reponse;
-            this.systemRoleChangeable = false;
+        try {
+            LlmInteraction interaction = jsonUtil.envoyerRequete(question);
+            this.reponse = interaction.reponseExtraite();
+            this.texteRequeteJson = interaction.questionJson();
+            this.texteReponseJson = interaction.reponseJson();
+        } catch (Exception e) {
+            FacesMessage message =
+                    new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                            "Problème de connexion avec l'API du LLM",
+                            "Problème de connexion avec l'API du LLM" + e.getMessage());
+            facesContext.addMessage(null, message);
         }
-
-        afficherConversation();
         return null;
     }
 
