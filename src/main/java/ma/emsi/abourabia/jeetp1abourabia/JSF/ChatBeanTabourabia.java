@@ -33,6 +33,9 @@ public class ChatBeanTabourabia implements Serializable {
      * Dernière réponse de l'API OpenAI.
      */
     private String reponse;
+    private String texteRequeteJson;
+    private String texteReponseJson;
+    private boolean debug;
     /**
      * La conversation depuis le début.
      */
@@ -50,6 +53,32 @@ public class ChatBeanTabourabia implements Serializable {
     public ChatBeanTabourabia() {
     }
 
+    public String getTexteRequeteJson() {
+        return texteRequeteJson;
+    }
+
+    public void setTexteRequeteJson(String texteRequeteJson) {
+        this.texteRequeteJson = texteRequeteJson;
+    }
+
+    public String getTexteReponseJson() {
+        return texteReponseJson;
+    }
+
+    public void setTexteReponseJson(String texteReponseJson) {
+        this.texteReponseJson = texteReponseJson;
+    }
+
+    public boolean isDebug() {
+        return debug;
+    }
+
+    public void setDebug(boolean debug) {
+        this.debug = debug;
+    }
+    public void toggleDebug() {
+        this.setDebug(!isDebug());
+    }
     public String getSystemRole() {
         return systemRole;
     }
